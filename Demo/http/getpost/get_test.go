@@ -1,23 +1,21 @@
-package main
+package getpost
 
 import (
-	"fmt"
 	"io/ioutil"
 	"net/http"
+	"testing"
 )
 
-func main() {
+func TestHttpGet(t *testing.T) {
 	response, err := http.Get("http://www.baidu.com")
 	if err != nil {
-		fmt.Println(err.Error())
+		t.Error(err)
 	}
-
 	defer response.Body.Close()
 
 	data, err := ioutil.ReadAll(response.Body)
 	if err != nil {
-		fmt.Println(err.Error())
+		t.Error(err)
 	}
-	fmt.Println(string(data))
-
+	t.Log(string(data))
 }
