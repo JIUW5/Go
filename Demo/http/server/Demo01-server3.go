@@ -7,7 +7,7 @@ import (
 )
 
 /*
-这段代码，是干嘛用的？详细跟我介绍一下！
+解释一下这段代码：
 1. 通过http.HandleFunc函数，将handler3函数与/路径绑定
 2. 通过http.ListenAndServe函数，监听8000端口
 3. handler3函数，接收两个参数，一个是http.ResponseWriter，一个是http.Request
